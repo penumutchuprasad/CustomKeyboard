@@ -51,7 +51,7 @@ class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+
         
     }
     
@@ -59,7 +59,7 @@ class MainVC: UIViewController {
         
         super.viewWillDisappear(animated)
         self.removeViewControllerAsChildViewControllerrrr(childViewController: self)
-        
+
     }
     
     

@@ -26,7 +26,8 @@ class ResultVC: UIViewController {
     var payButton: UIButton!
     
     var originalPassCode: String = ""
-    
+    let finalVC = FinalVC()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,7 @@ class ResultVC: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: .textProxyNilNotification, object: nil)
+        self.removeViewControllerAsChildViewController(childViewController: finalVC)
         
     }
     
@@ -131,9 +133,10 @@ class ResultVC: UIViewController {
         // Write logic for Payment Validation:
         
         print("Your PassCode is: \(originalPassCode)")
-        self.addViewControllerAsChildViewController(childViewController: FinalVC())
+        self.addViewControllerAsChildViewController(childViewController: finalVC)
         
     }
+    
     
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {
         

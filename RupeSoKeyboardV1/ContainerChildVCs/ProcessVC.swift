@@ -23,6 +23,9 @@ class ProcessVC: UIViewController {
         return tf
     }()
     
+    var vc2: ResultVC!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,6 +87,7 @@ class ProcessVC: UIViewController {
         super.viewWillAppear(animated)
         
         //Make Text nil, as it is appeaaring first time...
+        vc2 = ResultVC()
         
         NotificationCenter.default.post(name: .textProxyNilNotification, object: nil)
         NotificationCenter.default.post(name: .childVCInformation, object: self)
@@ -118,7 +122,6 @@ class ProcessVC: UIViewController {
         
     }
     
-    let vc2 = ResultVC()
     
     @objc func onNext(sender: UIButton) {
         

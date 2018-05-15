@@ -97,7 +97,7 @@ class KeyboardViewController: UIInputViewController {
             kAutoCapitalization: true,
             kPeriodShortcut: true,
             kKeyboardClicks: false,
-            kSmallLowercase: false
+            kSmallLowercase: true
             ])
         
         self.keyboard = defaultKeyboard()
@@ -123,7 +123,7 @@ class KeyboardViewController: UIInputViewController {
         backspaceDelayTimer?.invalidate()
         backspaceRepeatTimer?.invalidate()
         
-        NotificationCenter.default.removeObserver(self)
+        //NotificationCenter.default.removeObserver(self)
     }
     
     @objc func defaultsChanged(_ notification: Notification) {
@@ -323,6 +323,7 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.advanceTapped(_:)),
                                               for: .touchUpInside)
+//                            keyView.isHidden = !needsInputModeSwitchKey
                         case Key.KeyType.backspace:
                             let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
                             
@@ -390,6 +391,7 @@ class KeyboardViewController: UIInputViewController {
                 }
             }
         }
+    
     }
     
     /////////////////
@@ -437,6 +439,8 @@ class KeyboardViewController: UIInputViewController {
     // TODO: this is currently not working as intended; only called when selection changed -- iOS bug
     override func textDidChange(_ textInput: UITextInput?) {
         self.contextChanged()
+       // It calls whenever the keyboard hides, shows... & for change in every textfield // IOS bug is sorted out/
+        
     }
     
     func contextChanged() {
@@ -608,6 +612,7 @@ class KeyboardViewController: UIInputViewController {
         if let shiftStartingState = self.shiftStartingState {
             if shiftStartingState.uppercase() {
                 // handled by shiftUp
+                
                 return
             }
             else {
@@ -633,6 +638,7 @@ class KeyboardViewController: UIInputViewController {
             if let shiftStartingState = self.shiftStartingState {
                 if !shiftStartingState.uppercase() {
                     // handled by shiftDown
+            
                 }
                 else {
                     switch self.shiftState {
@@ -866,6 +872,7 @@ class KeyboardViewController: UIInputViewController {
             self.containerText = self.containerText + key.outputForCase(self.shiftState.uppercase())
             
         }else {
+
             self.textDocumentProxy.insertText(key.outputForCase(self.shiftState.uppercase()))
         }
         
@@ -956,28 +963,50 @@ class KeyboardViewController: UIInputViewController {
         if notf.name == .containerShowAndHideNotification {
             resignFirstResponder()
             self.HandlePaymentContainer()
+           // removeObservers()
             
             OperationQueue.current?.addOperation {
-                self.textDocumentProxy.insertText("The amount Rs.100 has been credited to your wallet...")
+                
+                DispatchQueue.main.async(execute: {
+                    self.textDocumentProxy.insertText("The amount Rs.100 has been credited to your wallet...")
+                })
+                
             }
-            //self.textDocumentProxy.insertText("The amount Rs.100 has been credited to your wallet...")
+           // createObeservers()
         }
         
     }
     
+    func removeObservers() {
+        
+        NotificationCenter.default.removeObserver(self, name: .containerShowAndHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .textProxyNilNotification, object: nil)
+        //NotificationCenter.default.removeObserver(self)
+
+    }
+    
+    
+    
     
     func handleContainerDisplay() {
         
+        if self.heightConstraint != nil {
+             self.heightConstraint?.constant = isContainerShowing ? 400 : 250
+        }
+        
         UIView.animate(withDuration: 0.35) {
-            
             if self.isContainerShowing {
-                self.setHeight(400)
+                if self.heightConstraint == nil {
+                    self.setHeight(400)
+                }
                 self.presentContainerVC()
                 return
             } else {
-                self.setHeight(250) // if we put less than 250, the pop ups for top row won't appear, and leads to some glitchness in rendering
+                if self.heightConstraint == nil {
+                    self.setHeight(250)
+                }
+                //self.setHeight(250) // if we put less than 250, the pop ups for top row won't appear, and leads to some glitchness in rendering
                 if self.view.subviews.contains(self.mainVC.view) {
-                    
                     self.removeViewControllerAsChildViewController(childViewController: self.mainVC)
                 }
                 return
