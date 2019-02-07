@@ -463,11 +463,11 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             }
             
             // images
-            if model.type == Key.KeyType.rupeSo {
+            if model.type == Key.KeyType.payment {
                 if let imageKey = key as? ImageKey {
                     if imageKey.image == nil {
-                        let rupeSoImage = UIImage(named: "RupeSoKey")
-                        let settingsImageView = UIImageView(image: rupeSoImage)
+                        let paymentKeyImg = #imageLiteral(resourceName: "rupee")
+                        let settingsImageView = UIImageView(image: paymentKeyImg)
                         imageKey.image = settingsImageView
                     }
                 }
@@ -555,7 +555,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         case
         Key.KeyType.return,
         Key.KeyType.keyboardChange,
-        Key.KeyType.rupeSo:
+        Key.KeyType.payment:
             key.color = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
             // TODO: actually a bit different
             key.downColor = self.globalColors.regularKey(darkMode, solidColorMode: solidColorMode)

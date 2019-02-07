@@ -88,37 +88,37 @@ class MainVC: UIViewController {
     
     private func addViewControllerAsChildViewControllerrrr(childViewController: UIViewController) {
         
-        addChildViewController(childViewController)
+        addChild(childViewController)
         view.addSubview(childViewController.view)
         childViewController.view.frame = CGRect.init(x: 0, y: 35, width: self.view.frame.width, height: self.view.frame.height-35)
         childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        childViewController.didMove(toParentViewController: self)
+        childViewController.didMove(toParent: self)
         
     }
     
     private func removeViewControllerAsChildViewControllerrrr(childViewController: UIViewController) {
         
-        childViewController.willMove(toParentViewController: nil)
+        childViewController.willMove(toParent: nil)
         childViewController.view.removeFromSuperview()
-        childViewController.removeFromParentViewController()
+        childViewController.removeFromParent()
         
     }
     
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {
         
-        addChildViewController(childViewController)
+        addChild(childViewController)
         view.addSubview(childViewController.view)
         childViewController.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        childViewController.didMove(toParentViewController: self)
+        childViewController.didMove(toParent: self)
         
     }
     
     private func removeViewControllerAsChildViewController(childViewController: UIViewController) {
         
-        childViewController.willMove(toParentViewController: nil)
+        childViewController.willMove(toParent: nil)
         childViewController.view.removeFromSuperview()
-        childViewController.removeFromParentViewController()
+        childViewController.removeFromParent()
         
     }
     

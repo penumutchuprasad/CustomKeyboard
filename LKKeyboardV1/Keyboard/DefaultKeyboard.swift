@@ -43,8 +43,8 @@ func defaultKeyboard() -> Keyboard {
     let keyboardChange = Key(.keyboardChange)
     defaultKeyboard.add(key: keyboardChange, row: 3, page: 0)
     
-    let rupeSo = Key(.rupeSo)
-    defaultKeyboard.add(key: rupeSo, row: 3, page: 0)
+    let pamentKey = Key(.payment)
+    defaultKeyboard.add(key: pamentKey, row: 3, page: 0)
     
     let space = Key(.space)
     space.uppercaseKeyCap = "space"
@@ -90,7 +90,7 @@ func defaultKeyboard() -> Keyboard {
     
     defaultKeyboard.add(key: Key(keyboardChange), row: 3, page: 1)
     
-    defaultKeyboard.add(key: Key(rupeSo), row: 3, page: 1)
+    defaultKeyboard.add(key: Key(pamentKey), row: 3, page: 1)
     
     defaultKeyboard.add(key: Key(space), row: 3, page: 1)
     
@@ -122,7 +122,7 @@ func defaultKeyboard() -> Keyboard {
     
     defaultKeyboard.add(key: Key(keyboardChange), row: 3, page: 2)
     
-    defaultKeyboard.add(key: Key(rupeSo), row: 3, page: 2)
+    defaultKeyboard.add(key: Key(pamentKey), row: 3, page: 2)
     
     defaultKeyboard.add(key: Key(space), row: 3, page: 2)
     

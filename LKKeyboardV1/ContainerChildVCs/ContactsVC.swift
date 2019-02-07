@@ -10,8 +10,7 @@ import UIKit
 
 class ContactsVC: UIViewController {
     
-    
-    var contactsArray = ["Prasad","Praveen","Ram","Dipesh","Abhishek","Gourav"]
+    var contactsArray = ["Prasad","Praveen","Ram","NTR","NBK","Gowtham"]
     let cellId = "cellId"
     
     var selDelegate: SelectProtocol?
@@ -33,20 +32,16 @@ class ContactsVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
     }
     
     func createTableView() {
         
         self.view.addSubview(tableView)
-        
         self.view.addConstraintsWithFormatString(formate: "H:|[v0]|", views: tableView)
         self.view.addConstraintsWithFormatString(formate: "V:|[v0]|", views: tableView)
-        
     }
     
 }
-
 
 extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
     

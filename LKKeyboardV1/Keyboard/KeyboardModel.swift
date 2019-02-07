@@ -66,7 +66,7 @@ class Key: Hashable {
         case period
         case space
         case `return`
-        case rupeSo
+        case payment
         case other
     }
     
@@ -104,7 +104,7 @@ class Key: Hashable {
                 return true
             case .return:
                 return true
-            case .rupeSo:
+            case .payment:
                 return true
             default:
                 return false

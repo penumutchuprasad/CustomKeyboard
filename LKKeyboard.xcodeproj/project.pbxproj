@@ -12,7 +12,7 @@
 		5A627184209B25CA009AFA24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A627182209B25CA009AFA24 /* Main.storyboard */; };
 		5A627186209B25D3009AFA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A627185209B25D3009AFA24 /* Assets.xcassets */; };
 		5A627189209B25D3009AFA24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A627187209B25D3009AFA24 /* LaunchScreen.storyboard */; };
-		5A62719B209B2605009AFA24 /* RupeSoKeyboardV1.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A627194209B2604009AFA24 /* RupeSoKeyboardV1.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A62719B209B2605009AFA24 /* LKKeyboardV1.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A627194209B2604009AFA24 /* LKKeyboardV1.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5A6271A2209B2683009AFA24 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6271A1209B2683009AFA24 /* DefaultKeyboard.swift */; };
 		5A6271A4209B26C0009AFA24 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6271A3209B26C0009AFA24 /* DirectionEnum.swift */; };
 		5A6271A6209B26EF009AFA24 /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6271A5209B26EF009AFA24 /* ExtraView.swift */; };
@@ -54,7 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5A62719B209B2605009AFA24 /* RupeSoKeyboardV1.appex in Embed App Extensions */,
+				5A62719B209B2605009AFA24 /* LKKeyboardV1.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,14 +62,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5A62717B209B25CA009AFA24 /* RupeSoKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeSoKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A62717B209B25CA009AFA24 /* LKKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LKKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A62717E209B25CA009AFA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A627180209B25CA009AFA24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A627183209B25CA009AFA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A627185209B25D3009AFA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A627188209B25D3009AFA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A62718A209B25D3009AFA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A627194209B2604009AFA24 /* RupeSoKeyboardV1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RupeSoKeyboardV1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A627194209B2604009AFA24 /* LKKeyboardV1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LKKeyboardV1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A627198209B2605009AFA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A6271A1209B2683009AFA24 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
 		5A6271A3209B26C0009AFA24 /* DirectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 		5A627172209B25CA009AFA24 = {
 			isa = PBXGroup;
 			children = (
-				5A62717D209B25CA009AFA24 /* RupeSoKeyboard */,
-				5A627195209B2605009AFA24 /* RupeSoKeyboardV1 */,
+				5A62717D209B25CA009AFA24 /* LKKeyboard */,
+				5A627195209B2605009AFA24 /* LKKeyboardV1 */,
 				5A62717C209B25CA009AFA24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,13 +124,13 @@
 		5A62717C209B25CA009AFA24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A62717B209B25CA009AFA24 /* RupeSoKeyboard.app */,
-				5A627194209B2604009AFA24 /* RupeSoKeyboardV1.appex */,
+				5A62717B209B25CA009AFA24 /* LKKeyboard.app */,
+				5A627194209B2604009AFA24 /* LKKeyboardV1.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5A62717D209B25CA009AFA24 /* RupeSoKeyboard */ = {
+		5A62717D209B25CA009AFA24 /* LKKeyboard */ = {
 			isa = PBXGroup;
 			children = (
 				5A62717E209B25CA009AFA24 /* AppDelegate.swift */,
@@ -140,17 +140,17 @@
 				5A627187209B25D3009AFA24 /* LaunchScreen.storyboard */,
 				5A62718A209B25D3009AFA24 /* Info.plist */,
 			);
-			path = RupeSoKeyboard;
+			path = LKKeyboard;
 			sourceTree = "<group>";
 		};
-		5A627195209B2605009AFA24 /* RupeSoKeyboardV1 */ = {
+		5A627195209B2605009AFA24 /* LKKeyboardV1 */ = {
 			isa = PBXGroup;
 			children = (
 				5A6271BE209B291D009AFA24 /* ContainerChildVCs */,
 				5A6271A0209B2623009AFA24 /* Keyboard */,
 				5A627198209B2605009AFA24 /* Info.plist */,
 			);
-			path = RupeSoKeyboardV1;
+			path = LKKeyboardV1;
 			sourceTree = "<group>";
 		};
 		5A6271A0209B2623009AFA24 /* Keyboard */ = {
@@ -191,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5A62717A209B25CA009AFA24 /* RupeSoKeyboard */ = {
+		5A62717A209B25CA009AFA24 /* LKKeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A62718D209B25D3009AFA24 /* Build configuration list for PBXNativeTarget "RupeSoKeyboard" */;
+			buildConfigurationList = 5A62718D209B25D3009AFA24 /* Build configuration list for PBXNativeTarget "LKKeyboard" */;
 			buildPhases = (
 				5A627177209B25CA009AFA24 /* Sources */,
 				5A627178209B25CA009AFA24 /* Frameworks */,
@@ -205,14 +205,14 @@
 			dependencies = (
 				5A62719A209B2605009AFA24 /* PBXTargetDependency */,
 			);
-			name = RupeSoKeyboard;
+			name = LKKeyboard;
 			productName = RupeSoKeyboard;
-			productReference = 5A62717B209B25CA009AFA24 /* RupeSoKeyboard.app */;
+			productReference = 5A62717B209B25CA009AFA24 /* LKKeyboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5A627193209B2604009AFA24 /* RupeSoKeyboardV1 */ = {
+		5A627193209B2604009AFA24 /* LKKeyboardV1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A62719C209B2605009AFA24 /* Build configuration list for PBXNativeTarget "RupeSoKeyboardV1" */;
+			buildConfigurationList = 5A62719C209B2605009AFA24 /* Build configuration list for PBXNativeTarget "LKKeyboardV1" */;
 			buildPhases = (
 				5A627190209B2604009AFA24 /* Sources */,
 				5A627191209B2604009AFA24 /* Frameworks */,
@@ -222,9 +222,9 @@
 			);
 			dependencies = (
 			);
-			name = RupeSoKeyboardV1;
+			name = LKKeyboardV1;
 			productName = RupeSoKeyboardV1;
-			productReference = 5A627194209B2604009AFA24 /* RupeSoKeyboardV1.appex */;
+			productReference = 5A627194209B2604009AFA24 /* LKKeyboardV1.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -239,14 +239,15 @@
 				TargetAttributes = {
 					5A62717A209B25CA009AFA24 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 					};
 					5A627193209B2604009AFA24 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
-			buildConfigurationList = 5A627176209B25CA009AFA24 /* Build configuration list for PBXProject "RupeSoKeyboard" */;
+			buildConfigurationList = 5A627176209B25CA009AFA24 /* Build configuration list for PBXProject "LKKeyboard" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,8 +260,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5A62717A209B25CA009AFA24 /* RupeSoKeyboard */,
-				5A627193209B2604009AFA24 /* RupeSoKeyboardV1 */,
+				5A62717A209B25CA009AFA24 /* LKKeyboard */,
+				5A627193209B2604009AFA24 /* LKKeyboardV1 */,
 			);
 		};
 /* End PBXProject section */
@@ -329,7 +330,7 @@
 /* Begin PBXTargetDependency section */
 		5A62719A209B2605009AFA24 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5A627193209B2604009AFA24 /* RupeSoKeyboardV1 */;
+			target = 5A627193209B2604009AFA24 /* LKKeyboardV1 */;
 			targetProxy = 5A627199209B2605009AFA24 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -474,15 +475,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5LC376D52F;
-				INFOPLIST_FILE = RupeSoKeyboard/Info.plist;
+				DEVELOPMENT_TEAM = Q783J47277;
+				INFOPLIST_FILE = LKKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssss.RupeSoKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -493,15 +494,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5LC376D52F;
-				INFOPLIST_FILE = RupeSoKeyboard/Info.plist;
+				DEVELOPMENT_TEAM = Q783J47277;
+				INFOPLIST_FILE = LKKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ssss.RupeSoKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -511,8 +512,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5LC376D52F;
-				INFOPLIST_FILE = RupeSoKeyboardV1/Info.plist;
+				DEVELOPMENT_TEAM = Q783J47277;
+				INFOPLIST_FILE = LKKeyboardV1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +523,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -532,8 +533,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5LC376D52F;
-				INFOPLIST_FILE = RupeSoKeyboardV1/Info.plist;
+				DEVELOPMENT_TEAM = Q783J47277;
+				INFOPLIST_FILE = LKKeyboardV1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,7 +543,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ssss.RupeSoKeyboard.RupeSoKeyboardV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -550,7 +551,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5A627176209B25CA009AFA24 /* Build configuration list for PBXProject "RupeSoKeyboard" */ = {
+		5A627176209B25CA009AFA24 /* Build configuration list for PBXProject "LKKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A62718B209B25D3009AFA24 /* Debug */,
@@ -559,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A62718D209B25D3009AFA24 /* Build configuration list for PBXNativeTarget "RupeSoKeyboard" */ = {
+		5A62718D209B25D3009AFA24 /* Build configuration list for PBXNativeTarget "LKKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A62718E209B25D3009AFA24 /* Debug */,
@@ -568,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A62719C209B2605009AFA24 /* Build configuration list for PBXNativeTarget "RupeSoKeyboardV1" */ = {
+		5A62719C209B2605009AFA24 /* Build configuration list for PBXNativeTarget "LKKeyboardV1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A62719D209B2605009AFA24 /* Debug */,

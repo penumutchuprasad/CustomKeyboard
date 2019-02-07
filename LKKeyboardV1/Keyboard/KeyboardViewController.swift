@@ -140,10 +140,10 @@ class KeyboardViewController: UIInputViewController {
             kludge.translatesAutoresizingMaskIntoConstraints = false
             kludge.isHidden = true
             
-            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
             self.view.addConstraints([a, b, c, d])
             
             self.kludge = kludge
@@ -200,7 +200,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func solidColorMode() -> Bool {
-        return UIAccessibilityIsReduceTransparencyEnabled()
+        return UIAccessibility.isReduceTransparencyEnabled
     }
     
     var lastLayoutBounds: CGRect?
@@ -316,7 +316,7 @@ class KeyboardViewController: UIInputViewController {
             for rowKeys in page.rows { // TODO: quick hack
                 for key in rowKeys {
                     if let keyView = self.layout?.viewForKey(key) {
-                        keyView.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
+                        keyView.removeTarget(nil, action: nil, for: UIControl.Event.allEvents)
                         
                         switch key.type {
                         case Key.KeyType.keyboardChange:
@@ -325,7 +325,7 @@ class KeyboardViewController: UIInputViewController {
                                               for: .touchUpInside)
 //                            keyView.isHidden = !needsInputModeSwitchKey
                         case Key.KeyType.backspace:
-                            let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
+                            let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
                             
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.backspaceDown(_:)),
@@ -347,7 +347,7 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.modeChangeTapped(_:)),
                                               for: .touchDown)
-                        case Key.KeyType.rupeSo:
+                        case Key.KeyType.payment:
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.toggleSettings),
                                               for: .touchUpInside)
@@ -452,10 +452,10 @@ class KeyboardViewController: UIInputViewController {
         if self.heightConstraint == nil {
             self.heightConstraint = NSLayoutConstraint(
                 item:self.view,
-                attribute:NSLayoutAttribute.height,
-                relatedBy:NSLayoutRelation.equal,
+                attribute:NSLayoutConstraint.Attribute.height,
+                relatedBy:NSLayoutConstraint.Relation.equal,
                 toItem:nil,
-                attribute:NSLayoutAttribute.notAnAttribute,
+                attribute:NSLayoutConstraint.Attribute.notAnAttribute,
                 multiplier:1,
                 constant:height)
             self.heightConstraint!.priority = UILayoutPriority(rawValue: 1000)
@@ -1032,19 +1032,19 @@ class KeyboardViewController: UIInputViewController {
     
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {
         
-        addChildViewController(childViewController)
+        addChild(childViewController)
         view.addSubview(childViewController.view)
         childViewController.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 400-(self.heightConstraint?.constant)!)
         childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        childViewController.didMove(toParentViewController: self)
+        childViewController.didMove(toParent: self)
         
     }
     
     private func removeViewControllerAsChildViewController(childViewController: UIViewController) {
         
-        childViewController.willMove(toParentViewController: nil)
+        childViewController.willMove(toParent: nil)
         childViewController.view.removeFromSuperview()
-        childViewController.removeFromParentViewController()
+        childViewController.removeFromParent()
         
     }
     
